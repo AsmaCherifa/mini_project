@@ -13,16 +13,16 @@ build a web application for manually transcribing audio.
 ## Usage
 Backend Setup:
 
-cd backend
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+- cd backend
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
 
 Frontend Setup:
 
-cd frontend
-npm install
-npm run serve
+- cd frontend
+- npm install
+- npm run serve
 
 
 

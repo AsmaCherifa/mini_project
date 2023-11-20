@@ -8,6 +8,8 @@ urlpatterns = [
     path('register/', RegisterAPIView.as_view(), name='register'),
     path('audio/', AudioAPIView.as_view(), name='audio'),
     path('transcription/', TranscriptionView.as_view(), name='transcription'),
+    path('addAudio/', AudioAPIView.as_view(), name='add-audio'),
+
 
 ]
 if settings.DEBUG:

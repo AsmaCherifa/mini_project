@@ -33,6 +33,12 @@ class AudioAPIView(APIView):
         queryset = Audio.objects.filter(status='available')
         serializer = AudioSerializer(queryset, many=True)
         return Response(serializer.data)
+    #add an audio
+    def post(self, request, *args, **kwargs):
+        new_audio = Audio.objects.create(record_name='New Audio', status='available', audio_file='path/to/audio.mp3')
+        serializer = AudioSerializer(new_audio)
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class TranscriptionView(APIView):

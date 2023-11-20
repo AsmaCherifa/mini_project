@@ -1,4 +1,3 @@
-# src/urls.py
 from django.urls import path
 from .views import LoginAPIView,RegisterAPIView,AudioAPIView,TranscriptionView
 from django.conf import settings

@@ -1,6 +1,4 @@
 import unittest
-
-# Assuming your validation logic is implemented in a class called TranscriptionValidator
 from .models import Transcription
 from django.core.exceptions import ValidationError
 
@@ -45,8 +43,4 @@ class TestTranscription(unittest.TestCase):
             with self.assertRaises(ValidationError, msg="Invalid characters in transcription text: @, !"):
                     self.validator.validate_transcription_text()
 
-'''
-if __name__ == '__main__':
-    unittest.main()
-'''
 #python manage.py test

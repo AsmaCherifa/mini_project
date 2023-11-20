@@ -1,6 +1,8 @@
-<template>
+<template>    
+<NavbarVue></NavbarVue>
   <div class="dashboard-container">
     <h1 class="display-2">List of Audios</h1>
+
 
     <div v-if="username" class="welcome-message">
       <p>Welcome, {{ username }}</p>
@@ -44,10 +46,13 @@
 </template>
 <script>
 import axios from 'axios';
+import NavbarVue from '@/components/NavbarVue.vue';
 
 export default {
   name: 'HomeView',
-
+    components: {
+      NavbarVue
+  },
     data() {
         return {
             audioSegments: [],

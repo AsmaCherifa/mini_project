@@ -9,8 +9,6 @@ urlpatterns = [
     path('audio/', AudioAPIView.as_view(), name='audio'),
     path('transcription/', TranscriptionView.as_view(), name='transcription'),
     path('addAudio/', AudioAPIView.as_view(), name='add-audio'),
-
-
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

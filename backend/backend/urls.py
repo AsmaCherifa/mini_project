@@ -19,6 +19,6 @@ from django.urls import  include,path
 
 urlpatterns = [
     path('admin/', admin.site.urls),    
-    path('api/', include('audio.urls')),  # Assuming you want to prefix with '/api/'
+    path('api/', include('audio.urls')),
 
 ]

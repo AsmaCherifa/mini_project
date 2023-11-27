@@ -20,18 +20,27 @@ class Transcription(models.Model):
     text = models.TextField()
 
     def validate_transcription_text(self):
+        #retrieve the set of allowed characters from the CharacterSet model.
         allowed_characters = set(CharacterSet.objects.values_list('character', flat=True))
-        transcription = self.text.strip()
-
+        transcription = self.text
         # Rule 1 : Numbers are voluntarily excluded
         if any(char.isdigit() for char in transcription):
             raise ValidationError("Numbers are not allowed in transcription text.")
 
-        # Rule 2 : Capital letters are allowed only as the first word letter or if all letters in the word are uppercase
-        for word in self.text.split():
+        # Rule 2: Capital letters are allowed only as the first word letter or if all letters in the word are uppercase
+        '''for word in self.text.split():
+            print(self.text.split())
             # Check if the word is alphabetical and contains at least one letter
-            if transcription.istitle() or transcription.isupper():
-                continue
+            if not word[0].isupper():
+                raise ValidationError("Capital letters are allowed only as the first word letter or if all letters in the word are uppercase")
+            else:
+                print('asma')
+'''
+        for word in self.text.split():
+            print(self.text.split())
+            if not word[0].isupper():
+                print('asma')
+                break #OUT
             raise ValidationError("Capital letters are allowed only as the first word letter or if all letters in the word are uppercase")
 
         # Rule 3 : There can be only zero or one space between two characters
